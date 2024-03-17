@@ -33,3 +33,145 @@ a,
     padding: 0 2rem;
   }
 }
+
+/* common styles */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  font-family: sans-serif;
+  display: flex;
+  background: #1a1e23;
+  overflow: scroll;
+}
+.content {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #1a1e23;
+  font-family: sans-serif;
+  overflow: scroll;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #73E831;
+}
+ul {
+  list-style-type: none; /* get rid of bullet points on side of list items */
+}
+/* common style ends */
+/* container */
+.header {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.container {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 40px;
+}
+/* person-form */
+.person-input {
+  width: 250px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+.add-button, .generate-button {
+  background-color: #0000ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 1.2rem;
+}
+/* person-form style ends */
+/* person-items */
+.person-items {
+  min-width: 350px;
+}
+/* each li with class="item" */
+.item {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+.item:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.item:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+/* item style end */
+.checkbox {
+  margin-right: 10px;
+}
+.delete-button {
+  float: right;
+  background-color: #dc143c;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.pair-view-button {
+  float: right;
+  background-color: #d1be0f;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.set-use-button {
+  float: right;
+  background-color: #0fd120;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.reset-button {
+  float: right;
+  background-color: #dc143c;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
