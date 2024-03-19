@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Persons from '@/components/Persons.vue'
 import { usePersonsStore } from '@/stores/persons'
+import Settings from './components/Settings.vue'
 
 const patientsStore = usePersonsStore()
 
@@ -10,13 +11,7 @@ patientsStore.loadFromLocalStorage()
 <template>
   <main>
     <div class="grid">
-      <div class="column">
-        <h1>Zweierschaft</h1>
-        <form>
-          <button class="reset-btton" onclick="clearAll()">Reset</button>
-        </form>
-      </div>
-
+      <Settings />
       <Persons />
 
       <div class="column">
