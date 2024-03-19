@@ -22,3 +22,8 @@ interface Person {
   name: string
   isStuff: boolean
 }
+
+interface View {
+  setOfPairs: SetOfPairs
+  isVisible: Boolean
+}

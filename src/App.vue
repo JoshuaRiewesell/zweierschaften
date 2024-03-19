@@ -4,6 +4,7 @@ import { usePersonsStore } from '@/stores/persons'
 import { useSetsStore } from '@/stores/sets'
 import Settings from './components/Settings.vue'
 import Sets from './components/Sets.vue'
+import View from './components/View.vue'
 
 const patientsStore = usePersonsStore()
 const setsStore = useSetsStore()
@@ -36,13 +37,7 @@ setsStore.loadFromLocalStorage()
         <ul class="usedSet-items"></ul>
       </div>
 
-      <div class="column">
-        <h1>Ansicht</h1>
-        <div>
-          <button onclick="copyView()">Copy</button>
-        </div>
-        <ul class="pair-items" id="pair-items"></ul>
-      </div>
+      <View />
     </div>
   </main>
 </template>
