@@ -1,4 +1,23 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup lang="ts">
+import { usePersonsStore } from '@/stores/persons'
+
+const personsStore = usePersonsStore()
+
+let newPersonName = ''
+
+const addPerson = () => {
+  if (newPersonName.trim() !== '') {
+    personsStore.addPerson(newPersonName, false)
+    newPersonName = ''
+  }
+}
+
+const deletePerson = (person: Person) => {
+  personsStore.removePerson(person.name)
+}
+</script>
+
 <template>
   <div class="column">
     <h1>Personen</h1>
@@ -13,7 +32,7 @@
     </form>
     <!--<input type="file" id="csvFile" accept=".csv" />-->
     <ul>
-      <li v-for="(person, index) in persons" :key="index" class="item">
+      <li v-for="(person, index) in personsStore.persons" :key="index" class="item">
         <input type="checkbox" class="checkbox" />
         {{ person.name }}
         <button class="delete-button" @click="deletePerson(person)">X</button>
@@ -21,27 +40,6 @@
     </ul>
   </div>
 </template>
-
-<script setup lang="ts">
-import { usePersonsStore } from '@/stores/persons'
-
-const store = usePersonsStore()
-
-const persons = store.persons
-
-let newPersonName = ''
-
-const addPerson = () => {
-  if (newPersonName.trim() !== '') {
-    store.addPerson(newPersonName, false)
-    newPersonName = ''
-  }
-}
-
-const deletePerson = (person: Person) => {
-  store.removePerson(person.name)
-}
-</script>
 
 <style scoped>
 .person-input {

@@ -1,19 +1,19 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup lang="ts">
+import { usePersonsStore } from '@/stores/persons'
+import { useSetsStore } from '@/stores/sets'
+
+const personsStore = usePersonsStore()
+const setsStore = useSetsStore()
+
+function clearAll() {
+  personsStore.removeAllPersons()
+  setsStore.removeAllSets()
+}
+</script>
 <template>
   <div class="column">
     <h1>Zweierschaften</h1>
-    <form>
-      <button class="reset-btton" @click="clearAll()">Reset</button>
-    </form>
+    <button @click="clearAll()">Reset</button>
   </div>
 </template>
-
-<script setup lang="ts">
-import { usePersonsStore } from '@/stores/persons'
-
-const personsStore = usePersonsStore()
-
-function clearAll() {
-  personsStore.removeAllPatients()
-}
-</script>

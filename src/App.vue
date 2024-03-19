@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import Persons from '@/components/Persons.vue'
 import { usePersonsStore } from '@/stores/persons'
+import { useSetsStore } from '@/stores/sets'
 import Settings from './components/Settings.vue'
+import Sets from './components/Sets.vue'
 
 const patientsStore = usePersonsStore()
+const setsStore = useSetsStore()
 
 patientsStore.loadFromLocalStorage()
+setsStore.loadFromLocalStorage()
 </script>
 
 <template>
@@ -22,13 +26,7 @@ patientsStore.loadFromLocalStorage()
         </div>
       </div>
 
-      <div class="column">
-        <h1>Sets</h1>
-        <form class="sets-form">
-          <button type="submit" class="generate-button">Generate</button>
-        </form>
-        <ul class="set-items"></ul>
-      </div>
+      <Sets />
 
       <div class="column">
         <h1>Verwendet</h1>

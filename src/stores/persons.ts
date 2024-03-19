@@ -31,7 +31,8 @@ export const usePersonsStore = defineStore('persons', {
         console.error('Person with name ' + name + ' not found.')
       }
     },
-    removeAllPatients() {
+    removeAllPersons() {
+      this.persons = []
       localStorage.setItem('persons', JSON.stringify([]))
     }
   }
